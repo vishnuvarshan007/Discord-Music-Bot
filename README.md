@@ -53,33 +53,33 @@ lavalink:
 
 
 
-### **\ud83d\udd39 Setup**  
-1\ufe0f\u20e3 **Clone the repository:**  
+### **Setup**  
+**Clone the repository:**  
 ```bash
 git clone https://github.com/yourusername/discord-music-bot.git
 cd discord-music-bot
 ```
 
 
-2\ufe0f\u20e3 **Install dependencies:**  
+2**Install dependencies:**  
 ```bash
 pip install -r requirements.txt
 ```  
-3\ufe0f\u20e3 **Add your bot token and lavalink credientials**  
+3**Add your bot token and lavalink credientials**  
 ```
 DISCORD_BOT_TOKEN=your-bot-token-here
 LAVALINK_HOST = ""  # Replace with actual Lavalink server
 LAVALINK_PORT = 
 LAVALINK_PASSWORD = ""  # Replace with your Lavalink password
 ```  
-4\ufe0f\u20e3 **Run the bot:**  
+4**Run the bot:**  
 ```bash
 python bot.py
 ```  
 
 ---
 
-## **\ud83d\udcdd Commands**  
+## **Commands**  
 | **Command** | **Description** |
 |------------|----------------|
 | `/play [query]` | Play a song from YouTube/Spotify |
