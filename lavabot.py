@@ -16,11 +16,14 @@ intents = discord.Intents.all()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 DISCORD_BOT_TOKEN = "your-bot-token-here"
+support_server_link = "bot support server link"
+bot_invite_link = f"bot_invite_link"
+
 
 # Lavalink Configuration
-LAVALINK_HOST = "lava-all.ajieblogs.eu.org"  # Replace with actual Lavalink server
-LAVALINK_PORT = 80
-LAVALINK_PASSWORD = "https://dsc.gg/ajidevserver"  # Replace with your Lavalink password
+LAVALINK_HOST = ""  # Replace with actual Lavalink server
+LAVALINK_PORT = 
+LAVALINK_PASSWORD = ""  # Replace with your Lavalink password
 
 # Track previous songs
 previous_track = None
@@ -39,7 +42,7 @@ async def on_ready():
     await wavelink.Pool.connect(client=bot, nodes=[node])
     bot.is_247 = {}  # Initialize the 24/7 mode dictionary
     bot.afk_timers = {}  # Initialize AFK timers dictionary
-    activity = discord.Activity(type=discord.ActivityType.watching, name="Provided By 8 Bit")
+    activity = discord.Activity(type=discord.ActivityType.watching, name="Made By willsmith5314")
     await bot.change_presence(activity=activity)
     print("✅ Lavalink node connected!")
 
@@ -472,7 +475,7 @@ async def ping(interaction: discord.Interaction):
     embed.add_field(name="🤖 Bot Latency", value=f"{bot_latency}ms", inline=True)
     embed.add_field(name="📩 Message Latency", value=f"{message_latency}ms", inline=True)
     embed.add_field(name="🛰 Discord API Latency", value=f"{api_latency}ms", inline=True)
-    embed.set_footer(text="8 BIT GROUP OF COMPANIES | Latency Checker")
+    embed.set_footer(text="Made By willsmith5314 | Latency Checker")
 
     await interaction.edit_original_response(content=None, embed=embed)
 
@@ -517,7 +520,7 @@ async def help_command(interaction: discord.Interaction):
         inline=False
     )
 
-    embed.set_footer(text="8 BIT  GROUP OF COMPANIES | Created with ❤️")
+    embed.set_footer(text="Made By willsmith5314 | Created with ❤️")
     
     await interaction.response.send_message(embed=embed)
 
@@ -552,7 +555,7 @@ async def stats(interaction: discord.Interaction):
     bot_latency = round(bot.latency * 1000)  # Convert to ms
     
     # Embed Setup
-    embed = discord.Embed(title="📊 Bot Statistics", description="Made by **8 BIT GROUP OF COMPANIES**", color=discord.Color.blue())
+    embed = discord.Embed(title="📊 Bot Statistics", description="Made by **willsmith5314**", color=discord.Color.blue())
     embed.set_thumbnail(url=bot.user.avatar.url if bot.user.avatar else None)
     embed.add_field(name="⏳ Memory Usage", value=f"{memory_used} GB / {memory_total} GB", inline=False)
     embed.add_field(name="⌚️ Uptime", value=uptime_str, inline=False)
@@ -573,14 +576,11 @@ async def stats(interaction: discord.Interaction):
 async def invite(interaction: discord.Interaction):
     """Sends an embed with the bot invite link and support server."""
 
-    bot_invite_link = f"https://discord.com/oauth2/authorize?client_id={bot.user.id}&permissions=8&scope=bot%20applications.commands"
-    support_server_link = "https://discord.gg/YOUR_SUPPORT_SERVER"  # Replace with your actual support server link
-
     embed = discord.Embed(title="🔗 Invite Me!", description="Click the link below to invite me to your server!", color=discord.Color.blue())
     embed.add_field(name="🤖 Bot Invite Link", value=f"[Click Here to Invite]({bot_invite_link})", inline=False)
     embed.add_field(name="🌍 Support Server", value=f"[Join Support Server]({support_server_link})", inline=False)
     embed.set_thumbnail(url=bot.user.avatar.url if bot.user.avatar else None)
-    embed.set_footer(text="8 BIT  GROUP OF COPMANIES | Bringing Music to Your Server 🎶")
+    embed.set_footer(text="Made By willsmith5314 | Bringing Music to Your Server 🎶")
 
     await interaction.response.send_message(embed=embed)
 
